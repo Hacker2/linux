@@ -1,0 +1,26 @@
+don't need .txt
+.name - hidden file
+ls             -show files
+ls -a          -all - show all files + hidden
+ls -a path
+/path          - full path
+path           - relevant path
+.              - current directyry
+..             - parent directory
+
+file types
+1. usual files
+2. directives(folders)
+3. fisical devices
+4. symbolic links
+5. named pipes
+6. sockets
+
+ls -l
+d-directive b-block device c-symbolic device l-cybmolic link p-named pipes s-socket
+r read w write x eXecute
+usernmae usergroup
+sise modification date file name
+
+ls -la
+ls -l -a

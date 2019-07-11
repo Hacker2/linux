@@ -54,3 +54,5 @@ help
 help command
 man --help
 man --usage
+
+echo hello # test
