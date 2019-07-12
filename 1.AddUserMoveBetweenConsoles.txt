@@ -15,6 +15,14 @@ ct + d       - close terminal
 shotdown -h 19:00 'end working day'
 halt         - same as privious
 reboot
+
+//commands, it's from second chapter about files
+command [short keys] [long keys] [arguments];
+ln -l -a //short keys
+ln -al //short keys
+ln --help //long keys
+mana man //argument
+
 man command  - help for commad
 man man
 

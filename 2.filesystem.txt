@@ -24,3 +24,121 @@ sise modification date file name
 
 ls -la
 ls -l -a
+
+ls -l /dev
+ls -l /dev | more - space - next screen, enter - next line, ctrl+c or q - exit
+
+//links
+touch readme      - create file
+ln readme readmeCopy        - create hard link
+ls -l readme
+ln readme readmeSCopy - create sybmolik link
+ls -l readmeSCopy
+//s link not empty, it has 16 bits to link original file
+readlink readmeSCopy       - shows original file
+
+//make reverce links
+touch a1
+ln -s a1 a2;
+rm a1;
+ln -s a2 a1;
+ls -l a?
+
+command [short keys] [long keys] [arguments];
+ln -l -a //short keys
+ln -al //short keys
+ln --help //long keys
+mana man //argument
+
+cd ..
+cd .
+cd /home
+cd ~
+cd Documents
+
+ls dirName
+ls .
+ls ..
+ls fileNa*
+
+touch - crate file
+cat > hello.world    - override file if exist, or create
+some text
+ctrl+d - exit
+cat >> hello.world    - add to file end it exist or create
+
+mkdir - create dir
+rmdir - remove dir
+rm - remove file
+-i          - confirm each file
+-f          - don't ask
+-r          - delete recursevly
+
+cp [keys] fileOrigin fileDestination       - copy file
+-i          - confirm each file
+-f          - don't ask
+-r          - delete recursevly
+-a          - save atributes
+-d          - copy symbolic links not files
+-s          - create symb link not files
+-u          - don't overrdie if it was modified later
+
+cat originalFile copyFile    - copy file
+
+mv [keys] fileOrigin fileDestin     - move file
+-i          - confirm each file
+-f          - don't ask
+
+file fileName       - check file type
+
+more fileName     - space - next screen, enter - next line, ctrl+c or q - exit
+less fileName - add ability to go previous
+tail [-n] [fileName]  - read n lines from end of file, 10 by default
+head [-n] [fileName]  - read n lines from begin of file, 10 by default
+
+ex + tab       - search for comand witch begin with ex
+ex + tab + tab - search for all comands witch begin with ex
+java + tab
+which java     - which java file will run
+whereis java   - search where is command
+locate java    - search for command
+find /home -name java      - search file by atrribue in specific plase, search by name java in home folder
+
+chown [keys] newUser [newGroup] fileName   - change owner
+chgrp [keys] newGroup fileName             - change group
+
+rwx- read write execute or empty
+001 1 x
+010 2 w
+011 3 wx
+100 4 r
+101 5 rx
+110 6 rw
+111 7 rwx
+
+chmod 640 readme
+ls -l readme
+chmod go+xreadme
+chmod <category><deystvia><permissions> file
+category:
+u - user
+g - group
+o - other
+a - all
+
+deystvia
++ add
+- remove
+= equasl
+
+permissions
+r read
+w write
+x execute
+s right to change user or group - it means that file can be executed with right of owner, not right of person who run it
+ls -l `which su`
+ls -l /bin/su     - s means run as owner, not runner
+t sticky bit - before means app should be in memory not swap, but now it means that file can delete only file owner or folder owner
+u same permissions as user
+g same permissions as group
+o same permissions as other
