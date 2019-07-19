@@ -1,4 +1,5 @@
-c + a + (f1-7) - change tty
+ctrl + aal + (f1-7) - change tty
+alt + (f1-7) - change tty
 useradd name - add user by name
 passwd name  - change password for user
 #$           - root and usual user conole
@@ -12,8 +13,10 @@ su           - change user to root
 ct + al + t  - open terminal
 exit
 ct + d       - close terminal
+logout       - logs out, or super + l
 shotdown -h 19:00 'end working day'
-halt         - same as privious
+halt         - same as privious, but old, for old pc, shows message system is halted
+poweroff     - poweroff
 reboot
 
 //commands, it's from second chapter about files

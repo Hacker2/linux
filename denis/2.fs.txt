@@ -1,0 +1,136 @@
+/dev/sdx - file of hard drive
+/dev/sdxN - part of pard drive
+
+vsf - virtual fs
+
+file work:
+touch <файл> Создает пустой файл
+cat <файл> Просмотр текстового файла
+tac <файла> Вывод содержимого текстового файла в обратном порядке, т. е.
+сначала выводится последняя строка, потом предпоследняя и т. д.
+ср <файл1> <файл2> Копирует файл <файл1> в файл <файл2> . Если <файл2>
+существует, программа попросит разрешение на его перезапись
+mv <файл1> <файл2> Перемещает файл <файл1> в файл <файл2 >. Эту же команду можно
+использовать и для переименования файла
+rm <файл> Удаляет файл
+locate <файл> Производит быстрый поиск файла
+which <программа> Выводит каталог, в котором находится программа, если она вообще
+установлена. Поиск производится в каталогах, указанных в перемен­
+ной окружения path (это путь поиска программ)
+less <файл> Используется для удобного просмотра файла с возможностью
+скроллинга (постраничной прокрутки)
+
+catalogs:
+mkdir <каталог> Создание каталога
+cd <каталог> Изменение каталога
+ls <каталог> Вывод содержимого каталога
+rmdir <каталог> Удаление пустого каталога
+rm -r <каталог> Рекурсивное удаление каталога
+.
+..
+~
+
+links:
+ln file.txt linkl           - hard link
+ln -s file.txt link2        - soft link
+ls -l                       - shows number of links to file
+find . -lname "file"        - shows all symbolic links
+rm file                     - delete only one hard link, but file left
+
+chattr +i                   - make file undelitable
+touch f
+sudo chattr +i f
+rm f                        - cant remove
+chattr -i f
+rm f                        - remove
+
+chmod 640 <имя_файла>
+chmod +х script
+chmod -х script
+chown пользователь файл
+there is spesial right, they can add abitilty to usual users run files with root access
+chmod u+s /usr/sbin/pppd
+chattr - let change file attributes
+chattr +i /boot/grub/menu.1st
+chattr -i /boot/grub/menu.1st
+A - don't update atime
+a - only add data
+c - archive data
+D - for directorys, when files change thell immidiatly write to disk
+d - make reserve copy
+S - synchronize with disk
+lsattr file         - command shows file attributes
+
+find список_поиска выражение
+find / -name a.out          - search file in / by name a.out
+find / -name '*.txt'
+find . -size Ос             - search empty files or
+find . -empty
+find ~ -size +100М -size -150М       - search by size
+
+which which           - shows where file are
+locate locate         - search for all locate files
+
+mount & unmount:
+mount [опции] <устройство> <точка монтирования>
+sudo mount /dev/scdO /mnt/cdrom
+umount <устройство или точка монтирования>
+
+/dev/sdx
+/dev/sdxN          - sata & scsi
+/dev/hdx           - ide
+/dev/scdN          - cd
+fist boot is active
+on disc cant be 4 primary or 3 primary and one extendes partitions, in extendes can be 11 logic disc partitions,
+so partition can be primary, extended or logical
+for primary linux reserv numbers 1,2,3,4
+for logical 5 etc
+fdisk /dev/sda
+m - help
+p - partisions
+q - exit
+you can mount to /mnt auto mount to /media
+
+mount <раздел> <точка монтирования>
+mount /dev/sda5 /mnt/win
+mount -t <файловая система> <устройство> <точка монтирования>
+mount -t iso9660 /dev/sdc /mnt/cdro
+//ext2, ext3, ext4, iso9660, fat, ntfs
+-r mount only for reading
+-w mount for read write
+-a mount all file systems from file /etc/fstab  (execpt witch with noauto attr)
+/etc/fstab   - auto mount point
+устройство <точка монтирования> <тип_ФС> опции <флаг_РК> <флаг_проверки>
+флаг_РК - should we make reserve copy
+флаг_проверки  - do check fs for errors when mount
+options:
+auto - auto mount on start up
+noauto - no previous
+default - set all by default
+exec - allow to execute files
+noexec - no previous
+ro - read only
+rw - read write
+user - mount and unmount can anyone
+nouser - mount and unmount can only user
+umask - sets user rights, for not linux umask=0
+utf8 - mount only if fs use utf8
+/dev/sdc /mnt/cdrom auto umask=0,user,noauto,ro,exec 0 0
+/dev/sdal /mnt/win_c vfat umask=0,utf8 0 0
+ls -1 /dev/disk/by-uuid/  - shows disks ids
+1s -1 /dev/disk/by-uuid
+1s -1 /dev/disk/by-id
+sudo blkid                - same as previous
+long names is universal cause you can add new hdds with primary or secondary, with master or slave etc., and disk wil change
+you can use disk ids 3 ways:
+UUID=45AE-84D9 /media/sdal vfat defaults,utf8,umask=007, gid=46 0 0
+/dev/disk/by-id/scsi-SATA_WDC_WD1600JB-00_WD-WCANM7959048-part7 swap swap defaults 0 0
+ls -1 /dev/disk/by-id | grep usb - search for usb flash disk
+
+/dev/sda2 /var ext3 data=journal 1 0         - journal all, but slow
+/dev/sda2 /var ext3 data=ordered 1 0         - journal metadata
+/dev/sda2 /var ext3 data=writeback 1 0       - journal fastest, but minimum data, don't use
+
+after change call - mount -a
+ext3 can be move to ext4 and back, but if ext4 mount as ext3 no extents, write data as one bog pease
+use gparted or fdisk

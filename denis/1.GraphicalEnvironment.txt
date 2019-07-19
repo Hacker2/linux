@@ -1,0 +1,16 @@
+sudo apt install kubuntu-desktop
+sudo apt install kubuntu-full   - Kubuntu, Edubuntu, Lubuntu, Mythbuntu, Xubuntu, Ubuntu Server и Ubuntu GNOME ( cм. http://ubuntu.ru/family
+sudo apt install ubuntu-desktop - if you don't have desctop
+//try others gnome, cinnmon, mate, xfce, lxde
+remove and add app to panel
+
+sysRq - print screen
+ctrl+ alt + del - usually restart
+ctrl + alt + backspace - close x.org
+alt + sysRq + k        - kill all priceses
+alt + sysRq + e        - send sigterm to all processes(except init)
+alt + sysRq + s        - write all buffers on disk(use if want hard reset), you should see Evergency Sync
+alt + sysRq + u        - unmount all fs, you should see emergency umounting...ok
+alt + sysRq + r        - same as press reset, if you don't have it
+sysrq disabled in some distributives, to you edit /etc/sysctl.conf
+kernel.sysrq = 1

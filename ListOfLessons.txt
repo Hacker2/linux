@@ -1,0 +1,11 @@
+1. install on vm
+2. install with windows
+3. install applications
+4. adjustment
+5. desctop environments
+6. console & man, info
+7. mount unmount & fs
+
+console
+8. fs & files
+9.
