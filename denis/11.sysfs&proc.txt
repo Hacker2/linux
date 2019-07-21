@@ -1,0 +1,13 @@
+there is two pceudo file systems - sysfs & proc
+look at the size of /рrос/filesystems, it's 0, but there could be some infor, but all it in ram
+in /etc/fstab u could see mounting of this systems
+sysfs /sys sysfs defaults 0 0
+рrос /рrоc рrос defaults 0 0
+sysfs экспортирует в пространство пользователя информацию о ядре Linux, об имеющихся в системе устройствах и их драйверах
+proc — это специальный механизм, позволяющий получать информацию о системе, ядре или процессе и изменять параметры ядра и его модулей «на лету»
+cat /рrос/путь/<название_файла>
+echo "данные" > /рrос/путь/название_файла
+cat /proc/version
+cat /proc/cmdline
+cat /proc/cpuinfo
+cat /proc/meminfo

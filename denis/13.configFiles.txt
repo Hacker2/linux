@@ -1,0 +1,6 @@
+/etc - contains config files, like regedit on Win, but if u delete it still will work, no blue screen
+/etc/NetworkManager - network config
+/etc/abrt - Automatic bug detection and reporting tool
+/etc/alsa - Advanced Linux Sound Architecture
+/etc/gdm
+/etc/httpd - apache

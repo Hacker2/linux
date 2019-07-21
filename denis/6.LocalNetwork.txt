@@ -1,0 +1,12 @@
+ifconfig
+sudo service network stop
+sudo service network start
+sudo service network restart
+sudo service network status
+ping dkws.org.ua
+tracepath dkws.org.ua
+/etc/network/interfaces    - network config file
+hostnamectl set-hostname <имя узла>  - change hostname
+hostname    - same as prevoius, but restor after reboot
+//connect to wifi
+//vpn

@@ -1,0 +1,42 @@
+linux - is multiuser system, it meant that many users can use in same time
+root - main user, the god
+use root not good, cause you can run virus
+that's why we can't use it, in some distros, we can do it use ctrl + alt + f1
+su & sudo - use against root
+sudo <команда_которую_нужно_выполнить_с_правами_root>
+sudo gedit /etc/apt/sources.list
+gedit /etc/apt/sources.list
+su - make you root
+gksudo и kdesu    - like sudo, but for graphical apps, for gnome and kde
+alt + f2  - gksu gedit
+sudo -i - let you use terminal as root, like su
+sudo bash - same
+
+use sudo, not root pros ane cons
+pros:
+1. u don't need remember two passwords
+2. sudo ask for password, let you think
+3. sudo logging into /var/log/auth.log, root don't log
+4. if u want to hash system and don't know usernames it's harder
+cond;
+1. sudo ls /etc > /root/somefile           - can't run
+sudo bash -с "ls /etc > /root/somefile"
+
+//u can use root like
+sudo passwd root
+sudo passwd -l root  - disable root
+
+adduser <имя пользователя>
+passwd <имя пользователя>
+userdel <имя пользователя>
+
+/etc/passwd
+имя_пользователя: пароль : UID: GID: полное_имя: домашний_каталог: оболочка
+root:х:0:0:root:/root:/bin/bash
+den:x:500:500:Denis:/home/den:/bin/bash
+/etc/shadow                           - file with passwords
+/etc/goups                            - list of groups
+groupadd                              - add new group
+/etc/passwd - change user group
+
+//system settings - user acocunt - add, mange, and remove user

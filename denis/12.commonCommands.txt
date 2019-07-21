@@ -1,0 +1,30 @@
+arch - show pc architeture
+clear
+date
+echo
+exit
+man
+passwd
+startx
+uptime - statistic info about system
+users - who now working on system
+w, who, whoami - users working in system
+diff параметры файл1 файл2     - compare files
+cmp [параметры] файл1 файл2    - same as privious, shown nothing if file same, of line number
+grep ррр
+egrep [параметры] строка файлы - faster and more functional
+more & less
+head -п 10 /var/log/messages
+tail -n 15 /var/log/messages
+wc /var/log/messages     - words count
+wc -1 /var/log/messages - lines
+wc -с /var/log/messages - symbols
+vi, nano, ее, mcedit, pico — текстовые редакторы
+ftp <имя или адрес ЕТР-сервера>
+lynx — текстовый браузер
+mail — чтение почты
+mail ivanov@firma.ru
+free - infor about ram
+df   - info about disks
+md5sum файл - md5 chashe
+ssh и telnet — удаленный вход в систему

@@ -1,0 +1,27 @@
+bios load mbr(master boot record)
+mbr split in two parts, first is small in stores in mbr and use to load 2nd part
+2nd part loads linux, also it uses virtual disk which is disk in ram with linux models, it mount when boot begin, and unmount when end, then mount disks
+then start init process, but it's old, there is different init processes - init, initng, upsar, systemd - the new one, and using now on all distros
+init run /etc/inittab
+service <имя_сервиса> <start|stop|...>       - start, stop service etc i.e. rcapache start
+
+init is slow, cause it starts processes one by one, to make it multithreaded find file /etc/rc.d/rc, find line "i start" change to "i start &"
+
+systemd - faster, cause run only important services, and in paralel
+i.e. u don't need bloothooth, printers etc, start service only when u need it
+paralel - if a needs b they will be start not parallet, so in't not much faster that init, so it was improved with wait not all service start
+, but only part that we use in a, i.e. sockets, it much faster
+
+/etc/init.d     - list of domons(services)
+//I can show tabe of init and systemd
+
+service s start systemctl start s.service Разовый запуск сервиса s
+service s stop systemctl stop s.service Остановить сервис s
+service s restart systemctl restart s.service Перезапуск сервиса s
+system s status systemctl status s.service Статус сервиса s
+Is /etc/rc.d/init.d ls /lib/systemd/system/*.service /etc/systemd/system/*.service Получение списка служб
+chkconfig s on systemctl enable s.service Включает запуск сервиса после перезагрузки (сервис s будет загружаться автомати­ чески)
+chkconfig s off systemctl disable s.service Отключает автоматический запуск сервиса s
+chkconfig s systemctl is-enabled s.servive Проверяем, запускается ли s автоматически
+ls /etc/systemd/system/*.wants/
+s.service Выводит список целей (уров­ ней запуска), на которых сер­ вис будет запускаться авто­ матически

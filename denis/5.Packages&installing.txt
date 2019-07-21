@@ -1,0 +1,43 @@
+there is two ways to install app, from packages, or from source code
+there is rpm and deb packages
+to install from source:
+./configure     - wich chell all, ie if u have all needed libraries, and create makefile
+make            - compile app according to makefile
+make install    - install app to /usr/bin docst to /usr/share/doc and condig files to /etc
+repository - store packages
+it safe, cause new bugs can be updated with new versions from repository
+there is apps to manage packages
+rpm, urpmi, dpkg, apt, yum, dnf, gnome-software, pkgtool, zypper,
+we use dpkg and apt
+dpkg - can't resolve dependencies
+apt - can resolve dependencies
+dpkg [ключи] действие
+sudo dpkg -i /<путь>/package.deb                 - install
+sudo dpkg -r <package>                           - remove
+apt & apt-get - same, but apt new and smaller, but old distros don't know it, and need to use apt-get
+sudo apt-get install package
+/etc/apt/sources.list       - list of repos
+/var/cache/apt/archives     - list of downloaded packages
+there is versions of repos:
+1. main - main apps, free, update all time
+2. restricted - not free, limited support
+3. universe - open license, support not garantied
+4. multiverse - not free, no supprt, no garanti
+5. security - fixed packages from main and restricted
+6. backports - unofficial packages from ubuntu lovers
+for russiua support of repos u can add:
+/etc/apt/sources.list адрес archive.ubuntu.com на ru.archive.ubuntu.com
+apt-get [опции] команды [пакет]
+update - update list of latest packages
+upgrade - install latest packages
+dist-upgrade - update latest ditros packages
+i or install - install
+remove - remove
+check - verify
+clean - clean locar repo
+
+sudo alien package_file.rpm   - chage from rpm to deb, but no garanty
+sudo apt-get install alien    - install alien
+sudo apt-get install synaptic - install synptic package manager
+//show ubuntu soft center
+sudo apt-get update      - fix problems

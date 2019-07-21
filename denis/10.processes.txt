@@ -1,0 +1,27 @@
+kill [параметры] PID    - kill process by pid
+ps - shows running processes
+ps -а или ps -и root  - shows processes of mine, or root
+kill 2484
+ps -ах | grep <имя>
+ps -ах | grep firefox - to find firefox pid
+killall <имя процесса>  - kill process by name
+top - shows processes, sort by cpu usage
+Q - to exit
+U - only user processes
+D - change update interval
+F - sort by
+h - help
+pid - process id
+user - user name
+pr - process priority
+ni - nice
+virt - using virtual memory
+res - memory in ram without swap
+s- state: r - run, s - sleep, d - uninterruptible sleep, t - trace, z - zombe(ended, but steel we have info)
+cpu - cpu
+mem - mem
+time - how much process time did it use
+command - command witch run process
+
+nice -n <приоритет> команда аргументы             - run app with priority, from -20 to 19, by default 10
+renice -n <приоритет> -р PID                      - rerun with priority

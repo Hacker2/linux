@@ -1,0 +1,25 @@
+coddecs can't be used in linux, but can be load, cause u use them for private, not for discribution
+vlc
+codecs
+sudo dnf install gstreamer-plugins-bad gstreamer-plugins-bad-free-extras
+gstreamer-plugins-ugly gstreamer-ffmpeg gstreamer1-libav gstreamerl-
+plugins- bad-free-extras gstreamer1-plugins-bad-freeworId gstreamer-
+plugins-base-tools gst reamer1-plugins-good-extras gstreamerl-plugins-
+ugly gstreamerl-plugins-bad- free gstreamerl-plugins-good gstreamerl-
+plugins-base gstreamerl
+sudo apt-get install ubuntu-restricted-extras
+sudo apt-get install ffmpeg gxine libdvdread4 icedax tagtool libdvd-pkg
+easytag id3tool lame libxine2-ffmpeg nautilus-script-audio-convert libmadO
+mpg321 libavcodec-extra gstreamerl.0-libav
+there was x Window, now we use X.org and it's better
+// /etc/X11/xorg.conf  - there was x.org main conf file, but no longer
+startx - run x.org
+sudo service gdm stop  - stop gdm
+sudo service lightdm stop - stop lightdm
+sudo Xorg -configure   - config x.org, u will get xorg.conf.new in home dis, u can config and replace /etc/X11/xorg.conf
+sudo service gdm start
+sudo service lightdm start
+
+//LibreOffice and open office
+//gimp
+//chrome, thunderbolt, skype, virtual box, wine

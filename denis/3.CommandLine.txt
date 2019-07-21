@@ -1,0 +1,93 @@
+bash - mous usefull shell, but not only one, there is sh, sch, ksh, zsh all of them in /etc/shells, bush is default
+nologin - not shell, just programm whitch slows message, that access denied
+/bin/false & /bin/true - shells which use for securiti and don't let user to login
+most differens is script language in shells
+when bash starts it runs .bashrs
+echo "echo hello world" >> ~/.bashrs
+.bash_history - stores entered commands
+
+touch hello
+#!/bin/bash
+# usualy comments, but previous line is tell which shell to use
+echo "Привет, мир!"
+
+chmod +х hello
+./hello
+# ср ./hello /usr/bin  -to run app without ./
+hello
+
+переменная=значение
+ADDRESS=www.dkws.org.ua
+echo $ADDRESS
+//$ and no spaces around =
+read ADDRESS      - read variabe value from keyboard
+ADDRESS='hostname'  - read variable value from app hostname
+
+alse there is environment variables:
+HOME, RANDOM, UID, PWD
+export $ADDRESS    - create env var
+$0 — содержит имя сценария;
+$n — содержит значение параметра (п — номер параметра);
+$# — позволяет узнать количество параметров, которые были переданы.
+
+ARRAY[0]=1
+ARRAY[1]=2
+echo $ARRAY[0]
+
+for переменная in список
+do
+команды
+done
+
+for n in 1 2 3;
+do
+echo $n;
+done
+
+while условие
+do
+команды
+done
+
+n=1
+while [ $n -1t 4 ]
+do
+echo "$n "
+n=$(( $n+1 ));
+done
+
+if условие_1 then
+команды_1
+elif условие_2 then
+команды_2
+elif условие_N then
+команды_N
+else
+команды_N+1
+fi
+
+# переменная N = 10
+[ N==10 ]
+# переменная N не равна 10
+[ N!=10 ]
+-lt — меньше;
+-gt — больше;
+- lе — меньше или равно;
+-gе — больше или равно;
+- eq — равно (используется вместо =)
+
+# N меньше 10
+[ $N -lt 10 ]
+# N меньше А
+[ $N -lt $А ]
+
+-е файл — условие истинно, если файл существует;
+-d каталог — условие истинно, если каталог существует;
+-х файл — условие истинно, если файл является исполнимым.
+
+case переменная in
+значение_1) команды_1 ;;
+. . .
+значение_N) команды_N ;;
+*) команды_по_умолчанию; ;
+esac

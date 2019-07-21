@@ -1,0 +1,4 @@
+before we write logs with demons syslogd и rsyslogd in /var/log/messages, now with systemd-joumald.service using util - joumalctl
+save to /var/log
+gnome-system-log - show u logs
+journalctl - show logs(not working), there is lot filters in book

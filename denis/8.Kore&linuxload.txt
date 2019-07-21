@@ -1,0 +1,46 @@
+dmesg | less
+//core, gcc, ubuntu versions
+//fisical memory from bios, nx - no execute
+sudo apt-get install git build-essential ncurses-base ncurses-dev fakeroot kernel-package xz-utils
+wget https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.12.8.tar.xz
+ср /boot/config-$(uname -г) .config
+make menuconfig
+
+GRUB2 (GRand Unified Bootloader) пришел на смену LILO
+/boot/grub/grub.conf             - grub config, in old versions /boot/grub/menu.lst
+/dev/hda1 -> hd0,0 in grub
+/boot/grub/grub.conf             - grub2 config, don't edit, it compiles from /etc/grub.d and /etc/default.grub using util /usr/sbin/grub-mkconfig
+sudo grub-mkconfig               - config grub2
+sudo update-grub                 - run after configuration grub
+/sbin/grub-install /dev/sda      - grub installation//don't do it
+
+to create boot image:
+convert image.jpg -colors 14 -resize 640x480 image.xpm      - convert image to xpm
+gzip image.xpm                                              - zip image
+/boot/grub/grub.conf -> splashimage=(hd0,1)/grub/image.хрш.gz
+
+restore grub:
+mkdir /old
+mkdir /оld/dev
+mount /dev/sdaN /old
+mount /dev/sda5 /old
+/sbin/grub-install /dev/sda
+
+if edit loader with params rw, signle или rw, init=/bin/bash, you can do anything, so we need protect
+grub
+md5crypt                              - enter password
+gksudo gedit /boot/grub/grub.cnf      - add "password --md5 ваш-шифр-from-grub-m35crypt"
+or
+sudo nano /etc/grub.d/00_header
+В конец файла добавьте строки:
+cat « EOF
+set superusers="den"
+password den 1234
+EOF
+add to grub.cnf:
+set superusers="userl"
+password userl passwordl
+password user2 password2
+or
+password_pbkdf2 den зашифрованный_пароль
+grub-mkpasswd-pbkdf2                    - create password
