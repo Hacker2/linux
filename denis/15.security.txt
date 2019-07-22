@@ -1,0 +1,15 @@
+u can boot with single param to kernel, to fix it u can set password for single, but it will not help cause
+u can get root using grub2 with params rw init=/bin/bash  - it will run as root
+then you can use passwd root
+it's better to set pass to grub, for changing params only by pass
+but still we can load from live cd
+
+denied root
+u can add to /etc/sudoers line "max ALL=(ALL) NOPASSWD:ALL"
+or
+u can add to /etc/sudoers line "max ALL=(ALL) PASSWD:ALL"
+then in
+/etc/passwd change root:х:0:0:root:/root:/bin/bash to root:х:0:0:root:/root:/bin/true
+root and su will not work
+to return root we need reboot with params rw init=/bin/bash, we can do it only if know grup pass
+also we can denied root only for kde & gnome, description in book

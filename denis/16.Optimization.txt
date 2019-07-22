@@ -1,0 +1,17 @@
+cat /proc/sys/vm/swappiness     - swap coficient
+echo "значение" > /proc/sys/vm/swappiness
+echo "50" > /proc/sys/vm/swappiness
+
+create additional swap, if yours is small
+touch /swap
+dd if=/dev/zero of=/swap_file bs=lk count=524288   - add to /swap
+mkswap /swap_file 524288      - format swap
+swapon /swap_file             - activate, u can do same in auto mode
+
+crond— /etc/crontab
+минуты (0-59) часы (0-23) день (1-31) месяц (1-12) день_недели (0-6, 0 — Вс) команда
+
+at <время> [дата]
+at 2pm echo 'hello'
+atq - show list of tasks
+atrm - delete task

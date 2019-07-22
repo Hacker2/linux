@@ -1,0 +1,22 @@
+geteway it's where you packages go, like road signs
+to see default geteway:
+netstat -r
+netstat -rn - same but with ip, not domains
+route   - same
+route add default gw 192.168.181.2 eth0  - add new default route for eth0, but it static, will remove after reboot
+/etc/network/interfaces - to make changes after reboot
+route [операция] [тип] адресат gw шлюз [метрика] [dev интерфейс]
+operation - add or del
+type -net or -host or default
+last 2 params optional
+route del адрес
+/etc/network/interfaces:
+up route add -net 192.168.3.0 netmask 255.255.255.0 gw 192.168.1.2
+up route add default gw 192.168.1.2
+down route del default gw 192.168.1.2
+down route del -net 192.168.3.0
+
+echo 1 > /proc/sys/net/ipv4/ip_forward - make pc - gateway
+
+wirewall:
+192.168.*.* (сеть класса С), 10.*.*.* (сеть класса А) и 172.16.*.*-172.31.*.* (класс В)
