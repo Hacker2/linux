@@ -1,0 +1,168 @@
+main part of linux is Kernel
+Kernell always in Ram
+it works with fs, drives, apps, processes
+it between prcesses and hardware
+process can't create process, write to disk or to network, it must call system call from Kernel
+System boot begin with image of kernek from zero address from file /boot/vmlinuz-x.y.z - version of kernel
+2.2 and 2.4 ... is stable
+Kernel is small, and use utils, with utils it's OS
+Kernel serve for processes
+Proccess like VM, thinks that he is only one, and can use any resourcess from Kernel
+it spleets libraries with other processes
+For Kernel - process it's only row in process table with data like:
+pid - process id
+ppid - parent proccess id
+tty - terminal
+wd - working directory
+rid, rgid  - real id and group id
+etc.
+
+fork - crate new process, one process can call kernel fork to create new process
+init - first process witch create others - id 1
+fork - copy current process, new proccess differ only with id
+exec - load executable file to new process that was created with fork
+exec without fork possible, it just load new exec file
+any process when end return value - if 0 all is ok, or number of error
+
+ps - process status
+ps -u        - current user
+ps -e        - all processes in system
+ps -f        - full
+
+top - show current processes, sort by cpu, update 3 secods each
+ctrl + c   - exit
+3 types of process
+1. system - create by Kernel
+2. user - run by user
+3. demons - Disk And Execution MONitor run after Kernel init, runs in background, example - init - initialize system
+
+Process can comunicate, there is two main ways:
+1. pipes |
+2. signals - example devide by zero can send signal
+There is 63 sygnals
+sigkill  or kill   or signal 9
+kill [-s sygnal] pid
+kill 2068
+kill -s 2 2068   - interrupt
+kill -s 9 2068   - kill
+kill -s 15 2068  - termination - let close all files and data
+ctrl+c - send int(2) signal
+ctrl+\ - send quit(3)
+
+shell is most important process
+command - all that can be run - exec file, shells, pseudonims, user functions, scripts
+there is different shels, they have different commands, and can have build in programmin language - it's basic difference beetween shells
+sh - bourne shell
+bash - bourne again shell
+csh  - C shell, use c language
+tcsh - tiny c shell, small c shell
+pdksh
+sash
+/etc/shells - has list of shells
+/etc/passwd - start shell for each user
+
+/bin/rbash - enter new shell
+exit - exit from shell
+in script first line describe witch shell should script be run
+
+bash is the best
+alias <pseudoName> <long line with arguments> - create pseudoName for command
+echo "some data"   - pring data
+enable <commandName> - enable execution of script with same name as command
+eval "echo hello"    - execute command from parantethis
+let a=5+7
+echo $a
+source <file>        - execute commands from file
+
+history 5
+! 211 - runs 211 command
+!!               - run last command
+!hi              - latest that ends with hi
+^5^10            - change 5 to 10 in last command
+
+variables:
+v="test"
+echo v
+echo $v
+bash
+echo $v
+exit
+export v="test2"
+bash
+echo $v
+
+cat > myscript
+echo env var $HELLO
+echo local var $hello
+ctrl+d
+chmod a+x myscript
+export HELLO='hello from env'
+hello='hello from local'
+echo $hello
+./myscript
+
+echo $BASH_VERSION
+standart envi variables: user, uid, euid, home, hostname, hosttype, lang, path
+set - shows all variables
+$PATH - path where bash search for file, current file is not there, that's why we call ./myscript
+
+PS1 - represent enter sign for bash
+temp=$PS1
+PS1="\w>"
+PS1=temp
+
+CDPATH - where cd command search for directory
+cd max
+export CDPATH=:.:/home
+cd max
+
+cwd='pwd'
+${cwd}
+
+cd Mus*               - any symbols
+cd Musi?              - any sombol
+cd Musi[c,a,b,c]      - any of sybmols
+cd Mu[a,b,c,s,i,c]*    - any ammount of symbols
+cd Mus[a-n,A-N]*       - any of symbols from interval
+cd mus[^a,b]*          - any sybmols witch is not
+
+any process has 3 stream
+0 - standart in stdin
+1 - standart out stdout
+3 - standart error stderr
+
+> use to move stream out to stream in
+>> append data to stream end
+< move in stream to other stream - ???
+2> move errors
+2>&1 move err and out
+echo 'echo hello' > test
+echo 'echo hello' > /dev/null
+
+echo hello && echo world
+echo hello || echo world
+cd asdf && echo exist
+cd asdf || echo 'not exist'
+
+(date; free) > test
+function test {
+date;
+free;
+}
+test
+
+cat > test
+function test2 {
+echo 'hello world'
+}
+ctrl+D
+source ./test       - run instructions from file in current shell, main dirrerence betwen source and run ./test is source run in current shell, ./test in child
+test2
+unset test2 - remove test2 from shell
+chmod +x test
+./test
+test2
+
+
+.bashrc - contain data witch add any time when bash runs
+.bash_logout - runs script when we log out from bash

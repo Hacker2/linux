@@ -1,0 +1,13 @@
+osi - 7 layers;
+phiisical, data link, network, transport, session, presentation, application
+ip addres: 255.255.255.255
+newtwork mask - number of pc in network i.e. 255.255.255.0 - 256, 255.255.255.200 - 55, 255.255.0.0 - 65536,
+there is 5 classes of network:
+a - 1.0.0.0 - 126.0.0.0  - 2in24 - 16777216 mask  255.0.0.0  example - 125.*.*.*
+b - 128.0.0.0 - 191.255.0.0  - 65536 mask  255.255.0.0  example - 136.12.*.*
+c - 192.0.1.0 - 223.255.255.0  - 256 mask  255.255.255.0  example - 195.136.12.*
+d - 224.0.0.0 - 239.255.255.255  - multicast
+e - 240.0.0.0 - 247.255.255.255  - reserved
+dns and tree structure and cache dns
+ports
+DHCP (Dynamic Host Configuration Protocol) - dinamic ip

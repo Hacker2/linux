@@ -1,11 +1,40 @@
-1. install on vm
+1. install on vm & What is linux, & what distro?
 2. install with windows
-3. install applications
-4. adjustment
+3. install applications & packages - application analogs (gimp, libre office, open office, double commander, chrome, idea, skype)
+4. adjustment, consoles 1-7, cubes-4
 5. desctop environments
 6. console & man, info
 7. mount unmount & fs
+8. compiz
 
-console
+console:
 8. fs & files
 9.
+users and groups
+quots
+
+bash scripts
+
+processes
+sysfs & proc
+crond
+
+how internet works & internet connection
+vpn
+getaway
+ssh
+apach mysql php
+ftp
+dns
+proxy - squid
+mail
+nfs
+samba
+shifrovanie dannych?
+
+kernel
+grub
+init
+how to hack linux with grub
+
+wine & games

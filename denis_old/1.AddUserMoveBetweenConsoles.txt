@@ -1,0 +1,69 @@
+ctrl + aal + (f1-7) - change tty
+alt + (f1-7) - change tty
+useradd name - add user by name
+passwd name  - change password for user
+#$           - root and usual user conole
+who          - who works
+whoami       - what user I am
+tty          - witch tty I'm using
+w            - show users and ttys
+mouse in console - left click to select text, middle to put same text
+su name      - change user
+su           - change user to root
+ct + al + t  - open terminal
+exit
+ct + d       - close terminal
+logout       - logs out, or super + l
+shotdown -h 19:00 'end working day'
+halt         - same as privious, but old, for old pc, shows message system is halted
+poweroff     - poweroff
+reboot
+
+//commands, it's from second chapter about files
+command [short keys] [long keys] [arguments];
+ln -l -a //short keys
+ln -al //short keys
+ln --help //long keys
+mana man //argument
+
+man command  - help for commad
+man man
+
+1 user commands
+8 system commands
+2 system calls
+3 library colls
+4 devices
+5 file formats
+6 games
+7 diferent
+9 kernel
+
+man 2 exit    - man by level
+man 1 exit
+man 2 intro
+enter         - next line
+space         - next page
+arrow up and down, left right
+q             - quit
+/search<enter>     -search
+n             - next search
+
+info man      - analog man
+*             - links
+tab           - jumb by links
+enter         - enter link
+n p u         - next previous upper link(work only upper)
+q             - exit
+
+whatis man    - small man
+
+apropos what  - search command in help by part of name
+man -k passwd - search command by part of name in man
+
+help
+help command
+man --help
+man --usage
+
+echo hello # test

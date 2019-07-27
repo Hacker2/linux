@@ -1,0 +1,47 @@
+relative and full path
+upside-down tree
+
+cd Changes to another directory
+pwd Prints the name of the current (or present) working directory
+mkdir Creates a directory
+chmod Changes the permission on a fi le or directory
+ls Lists the contents of a directory
+
+(~) represents your home director
+(..) to go to a directory above the current
+cd - go to home dir
+
+*—Matches any number of characters.
+?—Matches any one character.
+[...]—Matches any one of the characters between the brackets, which can include a hyphen-separated range of letters or numbers.
+ls a*
+ls ????e
+ls [abw]*
+ls [a-g]*
+
+<—Directs the contents of a fi le to the command
+>—Directs the standard output of a command to a file
+2>—Directs standard error (error messages) to the file.
+&>—Directs both standard output and standard error to the file.
+>>—Directs the output of a command to a file, adding the output to the end of theexisting file.
+mail root < ~/.bashrc
+$ man chmod | col -b > /tmp/chmod
+$ echo "I finished the project on $(date)" >> ~/projects
+mail root cnegus rjones bdecker <<thetext       - All typing following that word is taken as user input until the word is repeated on a line by itself
+
+touch memo{1,2,3,4,5}
+ls
+touch {John,Bill,Sally}-{Breakfast,Lunch,Dinner}
+$ ls
+rm -f {John,Bill,Sally}-{Breakfast,Lunch,Dinner}
+$ touch {a..f}{1..5}
+$ ls
+
+drwxrwxr-t If a t appears at the end of a directory, it indicates that the sticky bit - owner can allow other users and groups to add fi les to the directory
+
+ls -at                 - list all files by time most recently modified
+ls -ld $HOME/test/     - list info about a directory
+ls -F                  - files and append fi le-type indicators
+ls --hide=g*           - not include any fi les beginning with the letter g
+ls -R                  - recurservly
+ls -S                  - by size
