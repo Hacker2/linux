@@ -1,0 +1,55 @@
+locate (to fi nd commands by name), find (to fi nd fi les based on lots of different attributes), and grep
+updatedb command runs once per day to gather the names of fi les
+locate command fi nds fi les faster because it searches a database instead of having to search the whole fi lesystem live
+locate command cannot fi nd any fi les added to the system since the previous time the database was created
+
+locate .bashrc        - find as part of path, not like find and no -name param
+sudo locate .bashrc   - find more
+locate -i muttrc      - no case
+
+slower than locate, but gives you an up-to-the-moment, you can also tell find to start at a particular point in the filesystem
+
+find                - find all
+find /etc           - find all in /etc
+find $HOME -ls      - l listing, s size
+
+//u can use * or ?
+find /etc -name passwd           - find by name
+find /etc -iname '*passwd*       - find by name, any case
+
+find /usr/share/ -size +10M - bigger than 10m
+find /mostlybig -size -1M   - less tham m
+find /bigdata -size +500M -size -5G -exec du -sh {} \;
+
+find /home -user chris -ls                   - find user files
+find /home -user chris -or -user joe -ls     - find chris of joe fiels
+find /etc -group ntp -ls                     - find by group
+find /var/spool -not -user root -ls          - find not root files
+
+find /bin -perm 755 -ls                      - find by permission
+find /home/chris/ -perm -222 -type d -ls     - type directory
+find /myreadonly -perm +222 -type f          - type file
+find . -perm -002 -type f -ls
+
+find /etc/ -mmin -10                         - changed less 10 minutes ago
+find /bin /usr/bin /sbin /usr/sbin -ctime -3 - changed for 3 days
+find find /var/ftp /var/www -atime +300      - accessed fro 3 days
+-atime, -ctime, and -mtime                   - accessed, changed, metadata changed in days
+-amin, -cmin, and -mmin                      - accessed, changed, metadata changed in minutes
+
+find /var/all \( -user joe -o -user chris \) -ls         - user joe or chris
+find /var/all/ -user joe -not -group joe -ls             - user joe but not his group
+find /var/all/ -user joe -and -size +1M -ls              - multiple requirements
+
+find [options] -exec command {} \;      - execute command on all files
+find [options] -ok command {} \;        - ask for each file if you want to execute command
+
+find /etc -iname iptables -exec echo "I found {}" \;
+find /usr/share -size +5M -exec du {} \; | sort -nr
+find /var/allusers/ -user joe -ok mv {} /tmp/joe/ \;
+
+grep desktop /etc/services        - search file with string 'desctop' in /etc/services
+grep -i desktop /etc/services     - any case
+grep -vi tcp /etc/services        - v - don't contain
+grep -rli peerdns /usr/share/doc/ - r - recursevly - l - just show files
+grep -ri --color root /etc/sysconfig/   - make colorfull

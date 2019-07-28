@@ -45,3 +45,53 @@ ls -F                  - files and append fi le-type indicators
 ls --hide=g*           - not include any fi les beginning with the letter g
 ls -R                  - recurservly
 ls -S                  - by size
+
+ls -ld ch3 test        - two files
+a d (for a directory), l (for a symbolic link), b (for a block device), c (for a character device), s (for a socket), or p (for a named pipe)
+for files and dirs means different
+
+chmod 777 file
+chmod 000 file
+chmod -R 755 $HOME/myapps       - recurservly for folder
+
+user (u), group (g), other (o), and all users (a)
+read (r), write (w), and execute (x) bits
+plus (+) and minus (–) signs
+chmod a-w file
+$ chmod o-x file
+$ chmod go-rwx file
+$ chmod u+rw files
+$ chmod a+x files
+$ chmod ug+rx files
+chmod -R o-w $HOME/myapps   - recursevly
+
+umask    - default permissions
+umask 777 ; touch file01 ; mkdir dir01 ; ls -ld file01 dir01
+umask 000 ; touch file02 ; mkdir dir02 ; ls -ld file02 dir02
+umask 022 ; touch file03 ; mkdir dir03 ; ls -ld file03 dir03
+
+chown joe /home/joe/memo.txt     - change owner
+ls -l /home/joe/memo.txt
+
+chown joe:joe /home/joe/memo.txt - change owner and group
+ls -l /home/joe/memo.txt
+
+chown -R joe:joe /media/myusb    - recursevly
+
+mv abc def       - moving files or folders
+mv abc ~
+mv /home/joe/mymemos/ /home/joe/Documents/
+alias mv
+
+cp abc def       - copy files or folders
+cp abc ~
+cp -r /usr/share/doc/bash-completion* /tmp/a/   - recursiv
+cp -ra /usr/share/doc/bash-completion* /tmp/a/  - save date
+
+rm abc                                 -delete
+rm *
+
+rmdir /home/joe/nothing/               - delete dir
+rm -r /home/joe/bigdir/                - recursive
+rm -rf /home/joe/hugedir/              - force - no questons
+

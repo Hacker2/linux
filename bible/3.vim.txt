@@ -1,0 +1,83 @@
+vi /tmp/test
+two main operating modes: command and input
+always starts in command mode
+alias vi
+
+To get into input mode, type an input command letter
+then press the Esc key
+a—The add command. With this command, you can input text that starts to the right of the cursor.
+A—The add at end command. With this command, you can input text starting at the end of the current line.
+i—The insert command. With this command, you can input text that starts to the left of the cursor.
+I—The insert at beginning command. With this command, you can input text that starts at the beginning of the current line.
+o—The open below command. This command opens a line below the current line and puts you in insert mode.
+O—The open above command. This command opens a line above the current line and puts you in insert mode.
+
+(:) to go into ex mode, you must press Esc twice to return to command mode.
+
+Arrow keys—Move the cursor up, down, left, or right
+W or w—Moves the cursor to the beginning of the next word
+B or b—Moves the cursor to the beginning of the previous word
+0 (zero)—Moves the cursor to the beginning of the current line.
+$—Moves the cursor to the end of the current line.
+H—Moves the cursor to the upper-left corner of the screen
+M—Moves the cursor to the fi rst character of the middle line on the screen.
+L—Moves the cursor to the lower-left corner of the screen
+
+x—Deletes the character under the cursor.
+X—Deletes the character directly before the cursor.
+d<?>—Deletes some text.
+c<?>—Changes some text.
+y<?>—Yanks (copies) some text
+
+dw—Deletes (d) a word (w) after the current cursor position.
+db—Deletes (d) a word (b) before the current cursor position.
+dd—Deletes (d) the entire current line (d).
+c$—Changes (c) the characters (actually erases them) from the current character
+to the end of the current line ($) and goes into input mode.
+c0—Changes (c) (again, erases characters) from the previous character to the
+beginning of the current line (0) and goes into input mode.
+cl—Erases (c) the current letter (l) and goes into input mode.
+cc—Erases (c) the line (c) and goes into input mode.
+yy—Copies (y) the current line (y) into the buffer.
+y)—Copies (y) the current sentence ( ) ), to the right of the cursor, into the buffer.
+y}—Copies (y) the current paragraph ( } ), to the right of the cursor, into the buffer.
+
+3dd—Deletes (d) three (3) lines (d), beginning at the current line.
+3dw—Deletes (d) the next three (3) words (w).
+5cl—Changes (c) the next fi ve (5) letters (l) (that is, removes the letters and enters input mode).
+12j—Moves down (j) 12 lines (12).
+5cw—Erases (c) the next fi ve (5) words (w) and goes into input mode.
+4y)—Copies (y) the next four (4) sentences ( ) ).
+
+p or P—Puts the copied text to the left of the cursor
+repeat that action by typing a period (.)
+
+ZZ—Saves the current changes to the fi le and exits from vi.
+:w—Saves the current fi le but doesn't exit from vi.
+:wq—Works the same as ZZ.
+:q—Quits the current fi le. This works only if you don’t have any unsaved changes.
+:q!—Quits the current fi le and doesn’t save the changes you just made to the fi le.
+
+Esc—Remember that Esc gets you back to command mode.
+u—Press u to undo the previous change you made.
+Ctrl+R—If you decide you didn’t want to undo the previous undo command, use Ctrl+R for Redo
+Caps Lock—Beware of hitting Caps Lock by mistake.
+:!command—You can run a shell command while you are in vi using :! followed by a shell command name.
+Ctrl+G—If you forget what you are editing, pressing these keys displays the name
+of the file that you are editing and the current line that you are on at the bottom of the screen.
+
+Ctrl+f—Pages ahead, one page at a time.
+Ctrl+b—Pages back, one page at a time.
+Ctrl+d—Pages ahead one-half page at a time.
+Ctrl+u—Pages back one-half page at a time.
+G—Goes to the last line of the fi le.
+1G—Goes to the fi rst line of the fi le.
+35G—Goes to any line number (35, in this case).
+
+/ or ? search for the next or previous text
+/hello—Searches forward for the word hello.
+?goodbye—Searches backward for the word goodbye.
+/The.*foot—Searches forward for a line that has the word The in it and also, after that at some point, the word foot.
+?[pP]rint—Searches backward for either print or Print.
+
+vimtutor - to learn more

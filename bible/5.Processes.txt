@@ -1,0 +1,44 @@
+each process, when it is run, is associated with a particular user account and group account. That account information helps determine what system resources the process can access
+ps
+top
+ps u          - shows more info
+VSZ (virtual set size) shows the size of the image process (in kilobytes), and RSS ( resident set size) shows the size of the program in memory
+time 0:00 for processes that haven’t even used a whole second of CPU time
+STAT column (+) indicates that the process is associated with the foreground operations
+
+ps aux        - a - for all users
+ps -eo pid,user,uid,group,gid,vsz,rss,comm               - e all runnig proccesses, o - columns to show
+ps -eo pid,user,group,gid,vsz,rss,comm --sort=-rss       - sort by rss
+
+top
+Press h to see help options, and then press any key to return to the top display.
+Press M to sort by memory usage instead of CPU, and then press P to return to sorting by CPU.
+Press the number 1 to toggle showing CPU usage of all your CPUs, if you have more than one CPU on your system.
+Press R to reverse sort your output.
+Press u and enter a username to display processes only for a particular user.
+
+Renicing a process: Note the process ID of the process you want to renice and press r
+Note the process ID of the process you want to kill and press k
+
+kill process with system-monitor
+
+You can place an active program in the background in several ways. One is to add an ampersand (&)to the end of a command line when you fi rst run the command
+or at command
+To stop a running command and put it in the background, press Ctrl+Z
+foreground to run (the fg command) or start it running in the background (the bg command) ??
+
+find /usr > /tmp/allusrfiles &     - find in background
+[3] 15971  job number, [3], and process ID number, 15971
+jobs       - show jobs
+top &
+jobs
+jobs -l    - shows process id
+fg %1      - foreground - back from background
+//in book was example with wim
+
+%—Refers to the most recent command put into the background
+%string—Refers to a job where the command begins with a particular string
+%?string—Refers to a job where the command line contains a string at any point
+%--—Refers to the previous job stopped before the one most recently stopped
+
+bg %5      - back app in background
