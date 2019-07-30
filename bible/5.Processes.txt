@@ -42,3 +42,30 @@ fg %1      - foreground - back from background
 %--—Refers to the previous job stopped before the one most recently stopped
 
 bg %5      - back app in background
+
+Besides telling a process to end, a signal might tell a process to reread confi guration fi les, pause (stop), or continue after being paused, to name a few possibilities
+Signals are represented by both numbers and names SIGKILL (9), SIGTERM (15), and SIGHUP (1)
+default signal is SIGTERM which tries to terminate a process cleanly
+SIGHUP 1 Hang-up detected on controlling terminal or death of controlling process.
+SIGINT 2 Interrupt from keyboard.
+SIGQUIT 3 Quit from keyboard.
+SIGABRT 6 Abort signal from abort(3).
+SIGKILL 9 Kill signal.
+SIGTERM 15 Termination signal.
+SIGCONT 19,18,25 Continue if stopped.
+SIGSTOP 17,19,23 Stop process.
+
+kill 10432
+kill -15 10432
+kill -SIGKILL 10432
+killall -9 testme     - kill by name
+
+nice from -20 to 19 By default 0
+lower the nice value, the more access to the CPUs the process has. –20 nice value gets more attention than a process with a 19 nice value
+A regular user can set nice values only from 0 to 19
+A regular user can set the nice value higher, not lower. if set 10, and then later wants to set it back to 5, that action will fail
+regular user can set the nice value only on the user’s own processes
+
+nice +5 updatedb &   - run updatedb with +5 nice value
+renice -n -5 20284   - set nice value to -5 to process 20284
+
