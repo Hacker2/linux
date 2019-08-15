@@ -1,0 +1,48 @@
+3 ways to use root:
+su      - open shell as root
+sudo    - let admin user run root commans
+graphical window
+
+root can work with:
+filestytems
+software install
+user accounts
+network interfaces
+servers
+Security features
+
+su       - asks root password
+su -     - change environment to root, home dir will be root
+su - mike         - become mike user
+ctrl+D or exit    - logout as root
+
+sudo      - let admin user run root commans
+/etc/sudoers    - define privileges for users
+alt+f2 gksudo gedit /etc/sudoers
+mike ALL=(ALL) ALL              - give all root priveleges
+mike ALL=(ALL) NOPASSWD: ALL              - add no password
+
+/sbin—Contained commands needed to boot your system
+/usr/sbin—Contained commands for such things as managing user accounts
+/bin and /usr/bin   - contain common commands
+/usr/local/bin or /usr/local/sbin    - u can add command here
+
+configs in text files
+
+journalctl                           - lets you page through all messages in the systemd journal
+journalctl --list-boots              - boot IDs for each time the system was booted
+journalctl -b eb3d5cbdda8f4f8da7bdbc71fb94e61e      - To view messages associated with a particular boot instance, use the -b option with one of the boot instances
+journalctl -k                                       - To see only kernel messages
+
+dmesg                                               - show boot log
+/var/log/dmesg                                      - second way
+displaying -b eb3d5cbdda8f4f8da7bdbc71fb94e61e      - third way
+/var/log/message                                    - contains logs, i.e. plug in USB, u will see logs
+
+lsusb                                               - list usb modules
+lscpu                                               - list cpus
+lsmod                                               - list of loaded kerken modules
+modinfo                                             - give information about modules i.e /sbin/modinfo -d e1000
+/lib/modules                                        - contain modles
+modprobe parport                                    - load parport module, but no after reboot
+rmmod parport                                       - remove module

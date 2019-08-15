@@ -1,0 +1,21 @@
+ip addr show            - shows network interfaces
+ip addr show eth0
+lo loopback interface, which is used to allow network commands run on the local system to connect to the local system, like localhost
+ifconfig
+ifconfig enp3s0      - same as ip_addr but also shows packages recived ange transimtted
+ping host1
+/etc/hosts           - map IP addresses to hostnames
+route                - road to internet
+traceroute google.com       - trace route
+hostname                    - hostname
+dnsdomainname               - domain name
+//config proxy
+
+ifdown lo     - down loopback
+ifconfig
+ifup lo       - up loopback
+ifconfig
+
+DNS servers and search domains are set in the /etc/resolv.con
+host redhat.com        - shows ipaddress and mail servers
+dig redhat.com         - dns information

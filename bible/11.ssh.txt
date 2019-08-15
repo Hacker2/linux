@@ -1,0 +1,31 @@
+ssh johndoe@10.140.67.23        - connect
+exit                            - exit
+~.ssh/known_hosts_              - after connect will contain hosts
+ls .ssh
+cat .ssh/known_hosts
+ssh johndoe@10.140.67.23 hostname       - execute hostname remotely
+ssh johndoe@10.140.67.23 "cat myfile"
+ssh -X johndoe@10.140.67.23 gedit    - execute windowed app
+ssh -X johndoe@10.140.67.23          - execute many commands from prompt
+scp /home/chris/memo johndoe@10.140.67.23:/tmp               - copy files by network
+scp -r /home/chris/memo johndoe@10.140.67.23:/tmp               - copy files recursivly
+scp johndoe@10.140.67.23:/usr/share/man/man1/ /tmp/          - copy dirs
+rsync -avl johndoe@10.140.67.23:/usr/share/man/man1/ /tmp/   - copy files (old command), if run again - no copy
+-a (recursive archive), -v (verbose), and -l (copy symbolic links)
+// try to copy symbolic links
+sftp johndoe@jd.example.com                                  - connect like by ftp and then copy files, use get and put commands
+
+not to use password each time on ssh:
+ssh-keygen                                                   - generate key
+it creates two keys: id_rsa and id_rsa.pub witch is public
+ssh-copy-id -i ~/.ssh/id_rsa.pub johndoe@10.140.67.23        - copy public key to remote
+ssh johndoe@10.140.67.23                                     - no password ask
+after this u can give access only to people with keys, denied passwods, set in /etc/ssh/sshd_config and "systemctl restart sshd"
+PasswordAuthentication no
+
+rsyslog service (rsyslogd daemon)                - write log messages to /var/log, u can see them useing journalctl
+etc/rsyslog.conf fi le is the primary confi guration fi le for the rsyslog service
+module(load="imuxsock")      - load module in this config file
+
+df                           - show avalable space on fs
+df -h                        - human readable

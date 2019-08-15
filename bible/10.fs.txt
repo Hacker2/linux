@@ -1,0 +1,31 @@
+fdisk -l                - list partitions
+fdisk -l /dev/sda       - about partition
+-c option with fdisk to turn off DOS compatibility mode and -u to show the size in sectors instead of cylinders
+
+format usb:
+tail -f /var/log/messages
+umount /dev/sdc1
+fdisk /dev/sdc      - (m for help) q-exit p -partitions n - new partiton e-extendedp-primaty w-wirte
+if error could be montedw with kernel, to unmount - partprobe /dev/sdc
+mkfs -t ext4 /dev/sdc1         - create fs
+mkdir /mnt/test                - create dir
+mount /dev/sdc1 /mnt/test      - mount
+df -h /mnt/test                - show info
+umount /dev/sdc1               - unmount
+
+to make it auto add to /etc/fstab
+/dev/sdc1 /mnt/test ext4 defaults 0 1       - defaults-mount at boot, 0 - backup 1 check for errors
+
+cat /proc/filesystems             - shows loaded into kernel fs
+free -m                           - check free memory
+/etc/fstab                        - add swap here like this
+/var/opt/myswap swap swap defaults 0 0
+swapoff /var/opt/myswap                            - disable swap
+swapoon -a                                         - enable swap
+
+mount                             - show all mounted
+mount -a                          - mount all auto from /etc/fstab
+mount -o loop whatever-i686-disc1.iso /mnt/mycdimage              - loop mount iso without writing to disk
+umount /mnt/test                      - unmount
+umount /dev/sdb1                      - unmount
+mkfs -t ext4 /dev/sdc1                - create fs

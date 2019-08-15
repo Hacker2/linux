@@ -1,0 +1,22 @@
+when add user u add data to:
+/etc/passwd
+/etc/group
+
+useradd -c "Sara Green" sara    - add new user//c is comment
+passwd sara                     - set password
+The useradd command determines the default values for new accounts by reading the /etc/login.defs and /etc/default/useradd files
+useradd -D                     - shows default settings
+useradd -D -b /home/everyone -s /bin/tcsh              - set default home and shell
+-b home -e default_expire_date -f default_inactive -g default_group  -s default_shell
+usermod -s /bin/csh chris                          - modify user shell
+userdel -r chris                                   - delete user with home dir
+userdel chris                                      - delete user
+user can belong to multiple groups in /etc/group
+groupadd kings                                     - create group
+groupadd -g 1325 jokers                            - create group and set group id
+groupmod -g 330 jokers                             - change goup number
+groupmod -n jacks jokers                           - change goup name
+permission 775 is actually 0775, u can change 0 to 1,2,4
+user id bit 4 u+s
+group id bit 2 g+s
+sticky bit 1 0+t

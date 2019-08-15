@@ -1,0 +1,9 @@
+init has 7 levels from 0-6
+0 halt 1 single user 2 multiuser 3 executed multiuser  4 user defined 5 grphical mode 6 reboot
+init 0          - shut down system
+init 3          - change to console
+runlevel        - shows current run level
+telinit 6       - same as init 6 will reboot
+/etc/rcN.d      - scripts for each level
+/etc/init.d     - demon to init, wich run this scripts
+ls /etc/init    - list jobs running

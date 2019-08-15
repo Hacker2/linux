@@ -1,3 +1,4 @@
+basic
 1. install on vm & What is linux, & what distro?
 2. install with windows
 3. install applications & packages - application analogs (gimp, libre office, open office, double commander, chrome, idea, skype)
@@ -7,11 +8,11 @@
 7. mount unmount & fs
 8. compiz
 
-console:
+terminal:
 8. fs & files
 9.
 users and groups
-quots
+-quots
 
 bash scripts
 
@@ -19,6 +20,7 @@ processes
 sysfs & proc
 crond
 
+internet:
 how internet works & internet connection
 vpn
 getaway
